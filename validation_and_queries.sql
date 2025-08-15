@@ -47,7 +47,7 @@ DROP FOREIGN KEY driver_ibfk_1;
 -- Step 3: Recreate FK with cascade rules
 ALTER TABLE driver 
 ADD CONSTRAINT fk_driver_employee
-FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE CASCADE ON UPDATE CASCADE;    -- Cascades delete and update actions to child table
+FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE CASCADE;    -- Cascades delete and update actions to child table
 
 
 -- Repeat for related tables
