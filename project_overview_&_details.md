@@ -17,9 +17,12 @@ In this database, the goal of the project is to practice SQL skills through sche
 
 ## Project Process
 
-<img width="603" height="152" alt="image" src="https://github.com/user-attachments/assets/4e4fe6df-cf3f-4954-8d42-53da84d1cfe6" />
-
-
+1. Design Phase 
+...* The database schema design was influenced by e-commerce businesses such as Amazon and Wayfair.
+2. Implementation Process
+...* Once we established the business rules of how many tables and what tables we required, we constructed PK and FK constraints for relationship purposes, following logical methodologies 
+3. 
+   
 ## Schema and Inserts 
 
 
