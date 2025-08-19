@@ -31,7 +31,7 @@ In this database, the goal of the project is to practice SQL skills through sche
 
 3. **Validation Process** 
     - Ran a query that confirmed that each table met the minimum number of inserts.
-    - Verified that PK and FK relationships were correctly enforced 
+    - Verified that PK and FK relationships were correctly enforced.
 
 4. **Analysis Phase**
     - Developed analytical queries to simulate real-world business questions. 
@@ -41,17 +41,17 @@ In this database, the goal of the project is to practice SQL skills through sche
 
 The schema was implemented in `schema_and_inserts.sql`, which contains:
 - Table creation with PK, FK, and constraints.
-- Sample data
+- Sample data.
 
 [View Schema and Inserts SQL](schema_and_inserts.sql)
 
 
 ## Challenges & Lessons Learned 
 
-- When creating a database as a new learner, it was difficult to understand some of the features of the language, for example, some features like 'on delete restrict' come as default and later become a challenge during the project when deleting a specific individual inside an entity.
-- Having a rigorous approach on how to creating a database using business rules is essential for a seamless and accurate implementation
-- 
+- As a new learner coming into this project, understanding the nuances of SQL behavior was challenging. For example, certain constraints like 'DELETE ON RESTRICT' are enabled by default and cause unexpected issues when attempting to delete related records.
+- This project reinforced the importance of designing well-defined database business rules. A structured, rule-driven approach ensures accuracy, consistency, and smoother implementation.
 
+  
 ## Credit/Contributions 
 
 **Team members**
