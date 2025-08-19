@@ -5,7 +5,7 @@ End-to-end SQL commerce database simulating real-world operations, including ent
 ## Entity Relationship Diagram (ERD)
 
 ![ERD Diagram](ERD.png)
-<img src="erd.png" alt="ERD Diagram" width="60%"/>
+<img src="erd.png" alt="ERD Diagram" width="30%"/>
 
 ## How to Run 
 
