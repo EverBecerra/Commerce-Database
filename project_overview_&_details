@@ -1,9 +1,10 @@
 # Project Overview
-In this project, the main objective was to create a beginner-friendly SQL database design that would allow for commerce-like storage and future transactions. 
+
+This project introduces SQL fundamentals and uses a simplified commerce database. While designed as a beginner-friendly exercise, the schema incorporates multiple real processes, including orders, payments, and many aspects of business operations.
 
 ## Business Objective 
 
-In this database, queries are the main focus of the project. This beginner-level project simulates validation and question queries. 
+In this database, the goal of the project is to practice SQL skills through schema validation, data insertion, and queries that simulate common business questions in a commerce environment. 
 
 ## Database Constraints 
 
