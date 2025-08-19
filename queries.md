@@ -3,8 +3,6 @@
 <detail>
   <summary><b>Query 1: Data Sample Validation Count</b></summarr>
 
-here is some information 
-
 ```sql
 SELECT 
     CASE 
