@@ -8,9 +8,9 @@ In this database, the goal of the project is to practice SQL skills through sche
 
 ## Database Constraints 
 
--- Beginner-level database design 
--- Some business constraints may not be represented 
--- Analysis is limited due to the small sample size
+\- Beginner-level database design 
+\- Some business constraints may not be represented 
+\- Analysis is limited due to the small sample size
 
 
 ## Project Process
