@@ -50,7 +50,9 @@ The schema was implemented in `schema_and_inserts.sql`, which contains:
 
 <detail>
   <summary><b>Query 1: Data Sample Validation Count</b></summarr>
-    
+
+here is some information 
+
 ```sql
 SELECT 
     CASE 
@@ -61,6 +63,7 @@ FROM information_schema.tables
 WHERE table_schema = 'dbms_project'
   AND table_rows < 3;
 ```
+<img width="219" height="66" alt="image" src="https://github.com/user-attachments/assets/c831a692-3111-4d71-9acb-26bf606363b0" />
 
 
 ## Challenges & Lessons Learned 
