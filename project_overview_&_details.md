@@ -21,29 +21,46 @@ In this database, the goal of the project is to practice SQL skills through sche
 ## Project Process
 
 1. **Design Phase**
-  - The database design was influenced by e-commerce businesses such as Amazon and Wayfair.
-  - Focused on identifying key entities and relationships needed for a commerce environment.
+    - The database design was influenced by e-commerce businesses such as Amazon and Wayfair.
+    - Focused on identifying key entities and relationships needed for a commerce environment.
 
 2. **Implementation Process**
-  - Established business rules to determine the required tables and relationships.
-  - Constructed PK and FK constraints to enforce referential integrity.
-  - Inserted a minimum of 3 rows per table, resulting in a total of 72 inserts.
+    - Established business rules to determine the required tables and relationships.
+    - Constructed PK and FK constraints to enforce referential integrity.
+    - Inserted a minimum of 3 rows per table, resulting in a total of 72 inserts.
 
 3. **Validation Process** 
-  - Ran a query that confirmed that each table met the minimum number of inserts.
-  - Verified that PK and FK relationships were correctly enforced 
+    - Ran a query that confirmed that each table met the minimum number of inserts.
+    - Verified that PK and FK relationships were correctly enforced 
 
 4. **Analysis Phase**
-  - Developed analytical queries to simulate real-world business questions. 
+    - Developed analytical queries to simulate real-world business questions. 
 
 
-   
 ## Schema and Inserts 
 
+The schema was implemented in `schema_and_inserts.sql`, which contains:
+- Table creation with PK, FK, and constraints.
+- Sample data
+
+[View Schema and Inserts SQL](schema_and_inserts.sql)
 
 
-## Queries 
+## Queries and Output
 
+<detail>
+  <summary><b>Query 1: Data Sample Validation Count</b></summarr>
+    
+```sql
+SELECT 
+    CASE 
+        WHEN COUNT(*) = 0 THEN 'All tables have >= 3 rows'
+        ELSE 'Some tables have fewer than 3 rows'
+    END AS `Insert Check`
+FROM information_schema.tables
+WHERE table_schema = 'dbms_project'
+  AND table_rows < 3;
+```
 
 
 ## Challenges & Lessons Learned 
