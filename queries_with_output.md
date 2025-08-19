@@ -22,3 +22,92 @@ WHERE table_schema = 'dbms_project'
 
 </details>
 
+
+## Query 2: FK Reconstructions and Deletion
+
+For this particular query, we dropped all employee instances where the first name is Brandon.
+Since ON DELETE CASCADE was not originally defined, MySQL defaults to ON DELETE RESTRICT, which prevents deleting a parent row while child rows still reference it.
+
+Steps to follow:
+   1. Find the FK constraint name on the table using the reference 
+   2. Drop the existing FK
+   3. Generate a new FK with the CASCADE
+
+<details>
+  <summary>Show Query 2 and Output</summary>
+  
+```sql
+  SELECT 
+	constraint_name 						    #Name of the FK/PK/Constraint
+FROM 
+	information_schema.key_column_usage			#Metadata mapping key columns and their references 
+WHERE 
+	table_schema = 'dbms_project' 				#Database containing the child table
+    AND table_name = 'driver' 					#Child table containing the FK we want to modify 
+    AND referenced_table_name = 'employees';	#Parent table the FK points to 
+
+-- Step 2: Drop the existing FK from driver
+ALTER TABLE driver							
+DROP FOREIGN KEY driver_ibfk_1;
+
+-- Step 3: Recreate FK with cascade rules
+ALTER TABLE driver 
+ADD CONSTRAINT fk_driver_employee
+FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE CASCADE;    -- Cascades delete and update actions to child table
+
+
+-- Repeat for related tables
+ALTER TABLE vehicle_fulfillment
+DROP FOREIGN KEY vehicle_fulfillment_ibfk_2;
+
+ALTER TABLE vehicle_fulfillment
+ADD CONSTRAINT fk_vehicle_fulfillment_driver 
+FOREIGN KEY (driver_id) REFERENCES driver(driver_id) ON DELETE CASCADE;
+
+ALTER TABLE delivery
+DROP FOREIGN KEY delivery_ibfk_1;
+
+ALTER TABLE delivery
+ADD CONSTRAINT fk_delivery_vehicle_fulfillment
+FOREIGN KEY (vehicle_id) REFERENCES vehicle_fulfillment(vehicle_id) ON DELETE CASCADE;
+
+ALTER TABLE fulfillment_method
+DROP FOREIGN KEY fulfillment_method_ibfk_1;
+
+ALTER TABLE fulfillment_method
+ADD CONSTRAINT fk_fulfillment_method_delivery
+FOREIGN KEY (delivery_id) REFERENCES delivery(delivery_id) ON DELETE CASCADE;
+
+ALTER TABLE pick_up_location
+DROP FOREIGN KEY pick_up_location_ibfk_1;
+
+ALTER TABLE pick_up_location
+ADD CONSTRAINT fk_pick_up_location_vehicle_fulfillment
+FOREIGN KEY (vehicle_id) REFERENCES vehicle_fulfillment(vehicle_id) ON DELETE CASCADE;
+```
+
+<img width="1561" height="262" alt="image" src="https://github.com/user-attachments/assets/7686c7db-74e4-4ba4-a0fd-38d08a55734b" />
+
+
+```sql
+-- View employees table
+SELECT * FROM employees;
+```
+
+<img width="783" height="106" alt="image" src="https://github.com/user-attachments/assets/71814c40-2bea-47b0-80e0-ffd298025cb5" />
+
+⚠️ Warning: Deleting by name in production environments is risky—consider using the primary key instead.
+```sql
+-- Disable safe updates (allows deletes without key filters)
+SET SQL_SAFE_UPDATES = 0; 
+
+-- Demo delete: remove all employees named Brandon
+-- (For demo only — in production, delete by primary key)
+DELETE FROM employees
+WHERE first_name = 'Brandon';
+```
+
+<img width="781" height="81" alt="image" src="https://github.com/user-attachments/assets/b8ec5107-32db-43b2-9600-1f282d2ded21" />
+
+
+</details>
