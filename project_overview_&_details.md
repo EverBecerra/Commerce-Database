@@ -17,17 +17,19 @@ In this database, the goal of the project is to practice SQL skills through sche
 
 ## Project Process
 
+<img width="603" height="152" alt="image" src="https://github.com/user-attachments/assets/4e4fe6df-cf3f-4954-8d42-53da84d1cfe6" />
+
 
 ## Schema and Inserts 
+
 
 
 ## Queries 
 
 
+
 ## Challenges & Lessons Learned 
 
-
-## How to Run 
 
 
 ## Credit/Contributions 
