@@ -1,4 +1,4 @@
-# Queries and Output
+# Queries with Output
 
 ## 🧪 Query 1: Data Sample Validation Count 
 
