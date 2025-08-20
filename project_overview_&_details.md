@@ -26,7 +26,7 @@ In this database, the objective of the project is to demonstrate SQL skills thro
 
 2. **Implementation Process**
     - Established business rules to determine the required tables and relationships.
-    - Constructed PK and FK constraints to enforce referential integrity.
+    - Constructed PK and FK constraints to enforce referential integrity (3NF).
     - Inserted a minimum of 3 rows per table, resulting in a total of 72 inserts.
 
 3. **Validation Process** 
