@@ -140,10 +140,23 @@ ORDER BY
 
 ## 📊 Query 4: 
 
-
-
+This query retrieves the complete records for the USB-C hub product, including all attributes stored in the 'product' table.
 <details>
 	<summary><strong>🔍 Show Query 4 and Output</strong></summary>
+
+```sql
+SELECT 
+	* 
+FROM
+	product 
+WHERE 
+	product_name = 'USB-C Hub' 
+ORDER BY 
+	product_name ASC;
+```
+
+<img width="407" height="29" alt="image" src="https://github.com/user-attachments/assets/1ff2ec2f-b67b-4486-87b6-f4ff7ec92094" />
+
 </details>
 
 
@@ -152,8 +165,35 @@ ORDER BY
 
 ## 📊 Query 5: 
 
-
+Aggregates product performance with average ratings, review count, and units sold by joining 'product', 'category', 'reviews', and 'order_items'; results are ordered by units sold and rating.
 
 <details>
 	<summary><strong>🔍 Show Query 5 and Output</strong></summary>
+
+```sql
+SELECT 
+	p.product_id, 
+	p.product_name, 
+	c.category_name, 
+	p.item_price, 
+	AVG(r.rating) AS average_rating, 
+	COUNT(r.review_id) AS total_reviews, 
+	COALESCE(SUM(oi.quantity), 0) AS total_units_sold
+FROM 
+	product p 
+JOIN category c ON p.category_id = c.category_id 
+LEFT JOIN reviews r ON p.product_id = r.product_id 
+LEFT JOIN order_items oi ON p.product_id = oi.product_id 
+GROUP BY 
+	p.product_id, 
+    p.product_name, 
+	c.category_name, 
+	p.item_price 
+ORDER BY 
+	total_units_sold DESC, 
+	average_rating DESC;
+```
+
+<img width="965" height="114" alt="image" src="https://github.com/user-attachments/assets/86f566ba-e869-49c6-96b1-a0b2fda6c85f" />
+
 </details>
