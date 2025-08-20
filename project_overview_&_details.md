@@ -5,7 +5,7 @@ This project introduces SQL fundamentals and uses a simplified commerce database
 
 ## Business Objective <!-- Goal of the Project -->
 
-In this database, the goal of the project is to practice SQL skills through schema validation, data insertion, and queries that simulate common business questions in a commerce environment. 
+In this database, the objective of the project is to demonstrate SQL skills through schema validation, data insertion, and queries that simulate common business questions in a commerce environment. 
 
 
 ## Database Constraints 
@@ -13,7 +13,7 @@ In this database, the goal of the project is to practice SQL skills through sche
 - Beginner-level database design 
 - Some business constraints may not be represented 
 - Analysis is limited due to the small sample size
-- Data minimum (≥ 3 rows per table)
+- Each table includes a minimum of 3 rows of sample data for validation
 - Every table has a PK
 - Many-to-many relationships have a composite entity 
 
@@ -48,7 +48,7 @@ The schema was implemented in `schema_and_inserts.sql`, which contains:
 
 ## Challenges & Lessons Learned 
 
-- As a new learner coming into this project, understanding the nuances of SQL behavior was challenging. For example, certain constraints like 'DELETE ON RESTRICT' are enabled by default and cause unexpected issues when attempting to delete related records.
+- Understanding SQL constraints like ON DELETE RESTRICT was challenging, as defaults sometimes caused unexpected issues when deleting records.
 - This project reinforced the importance of designing well-defined database business rules. A structured, rule-driven approach ensures accuracy, consistency, and smoother implementation.
 
   
