@@ -17,7 +17,7 @@ For a full breakdown of the project overview, business objectives, database cons
 
 ➡️[Project Overview and Details](project_overview_&_details.md)
 
-## Queries 
+## Queries and Output
 
 For complete SQL queries, including DDL, DML, and DQL examples, please see:
 
