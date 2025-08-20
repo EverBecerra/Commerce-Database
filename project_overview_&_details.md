@@ -31,7 +31,7 @@ In this database, the objective of the project is to demonstrate SQL skills thro
 
 3. **Validation Process** 
     - Ran a query that confirmed that each table met the minimum number of inserts.
-    - Verified that PK and FK relationships were correctly enforced.
+    - Verified that PK and FK relationships were correctly enforced, utilizing crow's foot.
 
 4. **Analysis Phase**
     - Developed analytical queries to simulate real-world business questions. 
