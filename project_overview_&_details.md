@@ -43,7 +43,7 @@ The schema was implemented in `schema_and_inserts.sql`, which contains:
 - Table creation with PK, FK, and constraints.
 - Sample data.
 
-[View Schema and Inserts SQL](schema_and_inserts.sql)
+[View Schema and Inserts SQL](schema_&_inserts.sql)
 
 
 ## Challenges & Lessons Learned 
