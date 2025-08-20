@@ -14,12 +14,11 @@ For complete SQL queries, including DDL, DML, and DQL examples, please see:
 
 ➡️[Queries](queries.md)
 
-## How to Run 
-
-1. Run 'schema_and_inserts.sql' to create tables and populate with inserts.
-2. Run 'validation_and_queries.sql' to test the schema, validate inserts, demonstrate a DDL/DML deletion query, and use DQL for analysis.
-
 ## Entity Relationship Diagram (ERD)
 
 ![ERD Diagram](ERD.png)
 
+## How to Run 
+
+1. Run 'schema_and_inserts.sql' to create tables and populate with inserts.
+2. Run 'validation_and_queries.sql' to test the schema, validate inserts, demonstrate a DDL/DML deletion query, and use DQL for analysis.
