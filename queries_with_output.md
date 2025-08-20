@@ -137,9 +137,10 @@ ORDER BY
 </details>
 
 
-## 📊 Query 4: 
+## 📊 Query 4: Retrieve Full Product Record (USB-C Hub)
 
-This query retrieves the complete records for the USB-C hub product, including all attributes stored in the 'product' table.
+This query retrieves the complete records for the USB-C Hub product, including all attributes stored in the 'product' table.
+
 <details>
 	<summary><strong>🔍 Show Query 4 and Output</strong></summary>
 
@@ -159,7 +160,7 @@ ORDER BY
 </details>
 
 
-## 📊 Query 5: 
+## 📊 Query 5: Aggregate Product Performance
 
 Aggregates product performance with average ratings, review count, and units sold by joining 'product', 'category', 'reviews', and 'order_items'; results are ordered by units sold and rating.
 
