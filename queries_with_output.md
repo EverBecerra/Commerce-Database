@@ -2,7 +2,7 @@
 
 ## 🧪 Query 1: Data Sample Validation Count 
 
-This statement validates that we successfully inserted 3 rows per table.
+Validates that each table contains at least three inserted rows.
 
 <details>
   <summary><strong>🔍 Show Query 1 and Output</strong></summary>
@@ -25,8 +25,7 @@ WHERE table_schema = 'dbms_project'
 
 ## 🛠️ Query 2: FK Reconstructions and Cascading Deletion
 
-For this particular query, we dropped all employee instances where the first name is Brandon.
-Since ON DELETE CASCADE was not originally defined, MySQL defaults to ON DELETE RESTRICT, which prevents deleting a parent row while child rows still reference it.
+Reconstructed a foreign key with ON DELETE CASCADE to enable deletion of parent rows while preserving referential integrity.
 
 Steps to follow:
    1. Find the FK constraint name on the table using the reference 
@@ -158,9 +157,6 @@ ORDER BY
 <img width="407" height="29" alt="image" src="https://github.com/user-attachments/assets/1ff2ec2f-b67b-4486-87b6-f4ff7ec92094" />
 
 </details>
-
-
-
 
 
 ## 📊 Query 5: 
