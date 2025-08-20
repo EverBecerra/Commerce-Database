@@ -1,11 +1,11 @@
 # Queries and Output
 
-## Query 1: Data Sample Validation Count 
+## 🧪 Query 1: Data Sample Validation Count 
 
 This statement validates that we successfully inserted 3 rows per table.
 
 <details>
-  <summary>Show Query 1 and Output</summary>
+  <summary><strong>🔍 Show Query 1 and Output</strong></summary>
 
   ```sql
 SELECT 
@@ -23,7 +23,7 @@ WHERE table_schema = 'dbms_project'
 </details>
 
 
-## Query 2: FK Reconstructions and Deletion
+## 🛠️ Query 2: FK Reconstructions and Cascading Deletion
 
 For this particular query, we dropped all employee instances where the first name is Brandon.
 Since ON DELETE CASCADE was not originally defined, MySQL defaults to ON DELETE RESTRICT, which prevents deleting a parent row while child rows still reference it.
@@ -34,7 +34,7 @@ Steps to follow:
    3. Generate a new FK with the CASCADE
 
 <details>
-  <summary>Show Query 2 and Output</summary>
+  <summary><strong>🔍 Show Query 2 and Output</strong></summary>
   
 ```sql
   SELECT 
@@ -109,5 +109,51 @@ WHERE first_name = 'Brandon';
 
 <img width="781" height="81" alt="image" src="https://github.com/user-attachments/assets/b8ec5107-32db-43b2-9600-1f282d2ded21" />
 
+</details>
 
+
+## 📊 Query 3: Products Priced Above $36 with Inner Join 
+
+This query returns the product name, item price, and category names by performing an inner join between the 'product' and 'category' tables. Items are filtered where the product price is higher than $36.
+
+<details>
+	<summary><strong>🔍 Show Query 3 and Output</strong></summary>
+		
+```sql 
+SELECT 
+	p.product_name, 
+    p.item_price, 
+    c.category_name 
+FROM 
+	product p
+INNER JOIN category c ON p.category_id = c.category_id
+WHERE 
+	p.item_price > 36 
+ORDER BY 
+	p.item_price DESC; 
+```
+
+<img width="424" height="65" alt="image" src="https://github.com/user-attachments/assets/127bbe4f-7b2d-45a5-a797-e4481497f369" />
+
+</details>
+
+
+## 📊 Query 4: 
+
+
+
+<details>
+	<summary><strong>🔍 Show Query 4 and Output</strong></summary>
+</details>
+
+
+
+
+
+## 📊 Query 5: 
+
+
+
+<details>
+	<summary><strong>🔍 Show Query 5 and Output</strong></summary>
 </details>
