@@ -137,7 +137,7 @@ ORDER BY
 </details>
 
 
-## 📊 Query 4: Retrieve Full Product Record (USB-C Hub)
+## 📊 Query 4: Retrieve Full Product Record 
 
 This query retrieves the complete records for the USB-C Hub product, including all attributes stored in the 'product' table.
 
