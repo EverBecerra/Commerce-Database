@@ -12,7 +12,7 @@ For a full breakdown of the project overview, business objectives, database cons
 
 For complete SQL queries, including DDL, DML, and DQL examples, please see:
 
-➡️[Queries](queries.md)
+➡️[Queries and Output](queries_&_output.md)
 
 ## Entity Relationship Diagram (ERD)
 
