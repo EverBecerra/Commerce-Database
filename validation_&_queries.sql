@@ -1,12 +1,3 @@
-/***
-
- My Part!!!
-
-***/
-
-
-
-
 -- This statement validates that we successfully inserted 3 rows per table
 SELECT 
     CASE 
@@ -20,7 +11,7 @@ WHERE table_schema = 'dbms_project'
 
 /***
  Data Manipulation Language (DML) & Data Definition Language (DDL) queries
- For this particular query we specifically called to drop all instances of Brandon where the first name equals Brandon
+ For this particular query, we specifically called to drop all instances of Brandon where the first name equals Brandon
  Since ON DELETE CASCADE was not originally defined, MySQL defaults to ON DELETE RESTRICT,
  which prevents deleting a parent row while child rows still reference it.
  Steps to follow:
@@ -28,7 +19,6 @@ WHERE table_schema = 'dbms_project'
    2. Drop the existing FK
    3. Generate a new FK with the CASCADE
 ***/
-
 
 -- Step 1: Find the FK constraint linking driver to employees
 SELECT 
@@ -48,7 +38,6 @@ DROP FOREIGN KEY driver_ibfk_1;
 ALTER TABLE driver 
 ADD CONSTRAINT fk_driver_employee
 FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE CASCADE;    -- Cascades delete and update actions to child table
-
 
 -- Repeat for related tables
 ALTER TABLE vehicle_fulfillment
@@ -79,7 +68,6 @@ ALTER TABLE pick_up_location
 ADD CONSTRAINT fk_pick_up_location_vehicle_fulfillment
 FOREIGN KEY (vehicle_id) REFERENCES vehicle_fulfillment(vehicle_id) ON DELETE CASCADE;
 
-
 -- View employees table
 SELECT * FROM employees;
 
@@ -92,18 +80,7 @@ DELETE FROM employees
 WHERE first_name = 'Brandon';
 
 
-
-/***
-
- Revised and provided feedback for the following queries created by my team members alter
-
-***/
-
-
-
--- Data Query Language (DQL)
--- Teammates:Pravalika Jetty & Yavar Begg
--- Products priced > $36 with category
+-- Data Query Language (DQL); Products priced > $36 with category
 SELECT 
 	p.product_name, 
     p.item_price, 
