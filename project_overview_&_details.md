@@ -55,7 +55,6 @@ The schema was implemented in `schema_and_inserts.sql`, which contains:
 ## Credit/Contributions 
 
 **Team members**
-- Yavar Begg
-- Alondra Alonso
-- Pravalika Jetty
-    
+- Pravalika Jetty & Yavar Begg → DQL query: Products > $36 by category  
+- Alondra Alonso → DQL query: USB-C Hub full record and Aggregate product performance query 
+- Ever Becerra → DML/DDL queries, cascade deletes, validation checks  
