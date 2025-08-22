@@ -1,6 +1,7 @@
 CREATE DATABASE dbms_project;
 USE dbms_project;
 
+-- Schema
 CREATE TABLE billing_address (
   billing_id INT PRIMARY KEY,
   street VARCHAR(50),
@@ -271,6 +272,7 @@ CREATE TABLE supplier_manufacturer_link (
   FOREIGN KEY (supplier_id) REFERENCES supplier (supplier_id)
 );
 
+-- Inserts
 INSERT INTO category(category_id, category_name, description, updated_date, active_status) VALUES
 (301, 'Computer Accessories', 'Various accessories for computers and laptops', '2024-11-07', 1),
 (302, 'Keyboards', 'Range of mechanical and membrane keyboards', '2024-11-08', 1),
