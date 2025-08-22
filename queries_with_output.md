@@ -36,10 +36,8 @@ Steps to follow:
   <summary><strong>🔍 Show Query 2 and Output</strong></summary>
   
 ```sql
-SELECT 
-	constraint_name 						    #Name of the FK/PK/Constraint
-FROM 
-	information_schema.key_column_usage			#Metadata mapping key columns and their references 
+SELECT constraint_name 						    #Name of the FK/PK/Constraint
+FROM information_schema.key_column_usage		#Metadata mapping key columns and their references 
 WHERE table_schema = 'dbms_project' 			#Database containing the child table
     AND table_name = 'driver' 					#Child table containing the FK we want to modify 
     AND referenced_table_name = 'employees';	#Parent table the FK points to 
