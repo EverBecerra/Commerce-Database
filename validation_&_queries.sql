@@ -21,12 +21,9 @@ WHERE table_schema = 'dbms_project'
 ***/
 
 -- Step 1: Find the FK constraint linking driver to employees
-SELECT 
-	constraint_name 						    #Name of the FK/PK/Constraint
-FROM 
-	information_schema.key_column_usage			#Metadata mapping key columns and their references 
-WHERE 
-	table_schema = 'dbms_project' 				#Database containing the child table
+SELECT constraint_name 						    #Name of the FK/PK/Constraint
+FROM information_schema.key_column_usage		#Metadata mapping key columns and their references 
+WHERE table_schema = 'dbms_project' 			#Database containing the child table
     AND table_name = 'driver' 					#Child table containing the FK we want to modify 
     AND referenced_table_name = 'employees';	#Parent table the FK points to 
 
@@ -85,25 +82,19 @@ SELECT
 	p.product_name, 
     p.item_price, 
     c.category_name 
-FROM 
-	product p
-INNER JOIN category c ON p.category_id = c.category_id
-WHERE 
-	p.item_price > 36 
-ORDER BY 
-	p.item_price DESC; 
+FROM product p
+INNER JOIN category c 
+	ON p.category_id = c.category_id
+WHERE p.item_price > 36 
+ORDER BY p.item_price DESC; 
 
 
 -- Teammate: Alondra Alonso 
 -- Full record for the USB-C Hub product
-SELECT 
-	* 
-FROM
-	product 
-WHERE 
-	product_name = 'USB-C Hub' 
-ORDER BY 
-	product_name ASC; 
+SELECT * 
+FROM product 
+WHERE product_name = 'USB-C Hub' 
+ORDER BY product_name ASC; 
 
 
 -- Aggregate product performance: avg rating, review count, units sold; join product, category, reviews, order_items; order by units sold & rating
@@ -115,11 +106,13 @@ SELECT
 	AVG(r.rating) AS average_rating, 
 	COUNT(r.review_id) AS total_reviews, 
 	COALESCE(SUM(oi.quantity), 0) AS total_units_sold
-FROM 
-	product p 
-JOIN category c ON p.category_id = c.category_id 
-LEFT JOIN reviews r ON p.product_id = r.product_id 
-LEFT JOIN order_items oi ON p.product_id = oi.product_id 
+FROM product p 
+JOIN category c 
+	ON p.category_id = c.category_id 
+LEFT JOIN reviews r 
+	ON p.product_id = r.product_id 
+LEFT JOIN order_items oi 
+	ON p.product_id = oi.product_id 
 GROUP BY 
 	p.product_id, 
     p.product_name, 
