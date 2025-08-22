@@ -15,7 +15,7 @@ SELECT
     END AS `Insert Check`
 FROM information_schema.tables
 WHERE table_schema = 'dbms_project'
-  AND table_rows < 3;
+	AND table_rows < 3;
 ```
 
 <img width="219" height="66" alt="image" src="https://github.com/user-attachments/assets/c831a692-3111-4d71-9acb-26bf606363b0" />
@@ -36,12 +36,11 @@ Steps to follow:
   <summary><strong>🔍 Show Query 2 and Output</strong></summary>
   
 ```sql
-  SELECT 
+SELECT 
 	constraint_name 						    #Name of the FK/PK/Constraint
 FROM 
 	information_schema.key_column_usage			#Metadata mapping key columns and their references 
-WHERE 
-	table_schema = 'dbms_project' 				#Database containing the child table
+WHERE table_schema = 'dbms_project' 			#Database containing the child table
     AND table_name = 'driver' 					#Child table containing the FK we want to modify 
     AND referenced_table_name = 'employees';	#Parent table the FK points to 
 
@@ -123,13 +122,11 @@ SELECT
 	p.product_name, 
     p.item_price, 
     c.category_name 
-FROM 
-	product p
-INNER JOIN category c ON p.category_id = c.category_id
-WHERE 
-	p.item_price > 36 
-ORDER BY 
-	p.item_price DESC; 
+FROM product p
+INNER JOIN category c
+	ON p.category_id = c.category_id
+WHERE p.item_price > 36 
+ORDER BY p.item_price DESC; 
 ```
 
 <img width="424" height="65" alt="image" src="https://github.com/user-attachments/assets/127bbe4f-7b2d-45a5-a797-e4481497f369" />
@@ -145,14 +142,10 @@ This query retrieves the complete records for the USB-C Hub product, including a
 	<summary><strong>🔍 Show Query 4 and Output</strong></summary>
 
 ```sql
-SELECT 
-	* 
-FROM
-	product 
-WHERE 
-	product_name = 'USB-C Hub' 
-ORDER BY 
-	product_name ASC;
+SELECT * 
+FROM product 
+WHERE product_name = 'USB-C Hub' 
+ORDER BY product_name ASC;
 ```
 
 <img width="407" height="29" alt="image" src="https://github.com/user-attachments/assets/1ff2ec2f-b67b-4486-87b6-f4ff7ec92094" />
@@ -176,11 +169,13 @@ SELECT
 	AVG(r.rating) AS average_rating, 
 	COUNT(r.review_id) AS total_reviews, 
 	COALESCE(SUM(oi.quantity), 0) AS total_units_sold
-FROM 
-	product p 
-JOIN category c ON p.category_id = c.category_id 
-LEFT JOIN reviews r ON p.product_id = r.product_id 
-LEFT JOIN order_items oi ON p.product_id = oi.product_id 
+FROM product p 
+JOIN category c
+	ON p.category_id = c.category_id 
+LEFT JOIN reviews r
+	ON p.product_id = r.product_id 
+LEFT JOIN order_items oi
+	ON p.product_id = oi.product_id 
 GROUP BY 
 	p.product_id, 
     p.product_name, 
