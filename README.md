@@ -6,13 +6,13 @@ End-to-end SQL commerce database simulating real-world operations, including ent
 
 For a full breakdown of the project overview, business objectives, database constraints, project processes, and more, please see:
 
-➡️[Project Overview and Details](project_overview_&_details.md)
+➡️[Project Overview and Details](Project_Overview_&_Details.md)
 
 ## Queries and Output
 
 For complete SQL queries, including DDL & DML examples, please see:
 
-➡️[Queries and Output](queries_with_output.md)
+➡️[Queries and Output](Queries_with_Output.md)
 
 ## Entity Relationship Diagram (ERD)
 
