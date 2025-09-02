@@ -10,7 +10,7 @@ For a full breakdown of the project overview, business objectives, database cons
 
 ## Queries and Output
 
-For complete SQL queries, including DDL, DML, and DQL examples, please see:
+For complete SQL queries, including DDL & DML examples, please see:
 
 ➡️[Queries and Output](queries_with_output.md)
 
@@ -21,4 +21,4 @@ For complete SQL queries, including DDL, DML, and DQL examples, please see:
 ## How to Run 
 
 1. Run 'schema_and_inserts.sql' to create tables and populate with inserts.
-2. Run 'validation_and_queries.sql' to test the schema, validate inserts, demonstrate a DDL/DML deletion query, and use DQL for analysis.
+2. Run 'validation_and_queries.sql' to test the schema, validate inserts, demonstrate a DDL/DML deletion query, and showcase  analytical queries.
